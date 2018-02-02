@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript"> 
+function fn_disable(obj){ 
+   var arr = document.getElementsByName("textbox"); 
+   if(obj.value == "disabled"){ 
+      for(var i=0; i<arr.length; i++){ 
+         arr[i].disabled = true; 
+      } 
+      }else{ 
+      for(var i=0; i<arr.length; i++){ 
+         arr[i].disabled = false; 
+      } 
+   } 
+} 
+</script> 
+</head>
+<body>
+<form> 
+<p><input type="radio" name="radiobutton" value="enabled" onClick="fn_disable(this);" checked ><label for="enable">활성</label></p> 
+<p><input type="radio" name="radiobutton" value="disabled" onClick="fn_disable(this);" ><label for="disable">비활성</label></p> 
+<input name="textbox" type="text"> 
+<input name="textbox" type="text"> 
+</form> 
+</form> 
+</body>
+</html>

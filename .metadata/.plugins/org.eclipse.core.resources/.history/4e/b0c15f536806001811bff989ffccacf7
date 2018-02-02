@@ -1,0 +1,28 @@
+package com.lkoproject.command;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.lkoproject.memberdao.ProductDAO;
+
+public class AddcartCommand implements MCommand{
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		String itemNo = request.getParameter("item_no");
+		String delivery =	request.getParameter("delivery");
+		String size =	request.getParameter("size");
+		String amount =	request.getParameter("amount");
+		
+		ProductDAO dao = new ProductDAO();
+		
+		dao.
+		
+		
+		return null;
+	}
+
+}

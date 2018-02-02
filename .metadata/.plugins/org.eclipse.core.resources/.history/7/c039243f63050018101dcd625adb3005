@@ -1,0 +1,192 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<!-- bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		
+		<link href="themes/css/bootstrappage.css" rel="stylesheet"/>
+		
+<!-- global styles -->
+		<link href="themes/css/flexslider.css" rel="stylesheet"/>
+		<link href="themes/css/main.css" rel="stylesheet"/>
+
+<!-- scripts -->
+		<script src="themes/js/jquery-1.7.2.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>				
+		<script src="themes/js/superfish.js"></script>	
+		<script src="themes/js/jquery.scrolltotop.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:include page="header.jsp"/>
+		<div id="wrapper" class="container">
+			
+			<section class="header_text sub">
+			<img class="pageBanner" src="themes/images/pageBanner.png" alt="New products" >
+				<h4><span>주문 / 결제</span></h4>
+			</section>	
+			<section class="main-content">
+				<div class="row">
+					<div class="span12">
+						<div class="accordion" id="accordion2">
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">구매 옵션</a>
+								</div>
+								<div id="collapseOne" class="accordion-body in collapse">
+									<div class="accordion-inner">
+										<div class="row-fluid">
+											<div class="span6">
+												<h4>새로운 맴버</h4>
+												<p>CRUMP의 새로운 맴버가 되시면 좀 더 빠르고 손쉽게 쇼핑 하실수 있습니다.</p>
+												<form action="#" method="post">
+													<fieldset>
+														<label class="radio" for="register">
+															<input type="radio" name="account" value="register" id="register" checked="checked">회원 가입
+														</label>
+														<label class="radio" for="guest">
+															<input type="radio" name="account" value="guest" id="guest">게스트 이용
+														</label>
+														<br>
+														<button class="btn btn-inverse" data-toggle="collapse" data-parent="#collapse2">다음</button>
+													</fieldset>
+												</form>
+											 </div>
+											 <div class="span6">
+												<h4>기존 맴버</h4>
+												<p>로그인이 필요합니다</p>
+												<form action="#" method="post">
+													<fieldset>
+														<div class="control-group">
+															<label class="control-label">아이디</label>
+															<div class="controls">
+																<input type="text" placeholder="Enter your username" id="username" class="input-xlarge">
+															</div>
+														</div>
+														<div class="control-group">
+															<label class="control-label">비밀번호</label>
+															<div class="controls">
+															<input type="password" placeholder="Enter your password" id="password" class="input-xlarge">
+															</div>
+														</div>
+														<button class="btn btn-inverse">로그인</button>
+													</fieldset>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">배송지 정보</a>
+								</div>
+								<div id="collapseTwo" class="accordion-body collapse">
+									<div class="accordion-inner">
+										<div class="row-fluid">
+											<div class="span6">
+												<h4>개인 정보</h4>
+												<div class="control-group">
+													<label class="control-label">이름</label>
+													<div class="controls">
+														<input type="text" placeholder="" class="input-xlarge">
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">성</label>
+													<div class="controls">
+														<input type="text" placeholder="" class="input-xlarge">
+													</div>
+												</div>					  
+												<div class="control-group">
+													<label class="control-label">Email</label>
+													<div class="controls">
+														<input type="text" placeholder="" class="input-xlarge">
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">휴대폰</label>
+													<div class="controls">
+														<input type="text" placeholder="" class="input-xlarge">
+													</div>
+												</div>
+												
+											</div>
+											<div class="span6">
+												<h4>배송지 정보</h4>
+												<div class="control-group">
+													<label class="control-label">이름</label>
+													<div class="controls">
+														<input type="text" placeholder="" class="input-xlarge">
+													</div>
+												</div>
+												<div class="control-group">
+													<label class="control-label">연락처</label>
+													<div class="controls">
+														<input type="text" placeholder="" class="input-xlarge">
+													</div>
+												</div>					  
+												<div class="control-group">
+													<label class="control-label"><span class="required">*</span> 주소</label>
+													<div class="controls">
+														<input type="text" placeholder="" class="input-xlarge">
+													</div>
+												</div>
+											
+												<div class="control-group">
+													<label class="control-label"><span class="required">*</span> 배송 메모</label>
+													<div class="controls">
+														<select class="input-xlarge">
+															<option value="1">Afghanistan</option>
+															<option value="2">Albania</option>
+															<option value="3">Algeria</option>
+															<option value="4">American Samoa</option>
+															<option value="5">Andorra</option>
+															<option value="6">Angola</option>
+														</select>
+													</div>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">구매 확정</a>
+								</div>
+								<div id="collapseThree" class="accordion-body collapse">
+									<div class="accordion-inner">
+										<div class="row-fluid">
+											<div class="control-group">
+												<label for="textarea" class="control-label">배송 메모</label>
+												<div class="controls">
+													<textarea rows="3" id="textarea" class="span12"></textarea>
+												</div>
+											</div>	
+														
+												
+												<button class="btn btn-inverse pull-right">결제하기</button>
+												<button class="btn pull-right" type="button">취소</button>						
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>				
+					</div>
+				</div>
+			</section>			
+		</div>
+		
+		<jsp:include page="footer.jsp"/>
+		<script src="themes/js/common.js"></script>
+</body>
+</html>

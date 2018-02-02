@@ -1,0 +1,27 @@
+package com.lkoproject.command;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.lkoproject.memberdao.ProductDAO;
+import com.lkoproject.memberdto.ProductDTO;
+
+public class ListCommand implements MCommand{
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		String main_cate = (String)request.getParameter("main_cate");
+		String sub_cate = (String)request.getParameter("sub_cate");
+		ProductDAO dao = new ProductDAO();
+		ArrayList<ProductDTO> dtos = dao.list(main_cate);
+		System.out.println(dtos.get(0));
+		
+		request.setAttribute("list", dtos);
+		System.out.println("º”º∫∏‘¿”");
+		
+		return "products.jsp";
+	}
+
+}

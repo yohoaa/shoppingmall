@@ -1,0 +1,127 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 팝업창 띄우기 </TITLE>
+<!--팝업창 css-->
+<style type="text/css">
+ #pop{
+  width:405px; height:325px; background:#000; 
+  position:absolute;z-index:999; top:10px; left:480px; text-align:center; 
+   }
+ #pop a{color:#fff;text-decoration:none;}
+  #pop a:hover{color:#fff;text-decoration:underline;} /*텍스트 롤오버 했을때 밑줄 나타나게 함*/
+</style>
+<!--팝업창 css끝-->
+ <!--팝업창 스크립트-->
+<script language='javascript'>
+<!--
+var mvf = false;
+var ofx = 0;
+var ofy = 0;
+var div_n;
+
+
+function fncInit(n)
+{
+    var cookiedata = document.cookie;
+    if ( cookiedata.indexOf(n+'=done') < 0 ) {
+        document.getElementById(n).style.visibility = 'visible';
+    }
+    else {
+        document.getElementById(n).style.visibility = 'hidden';
+    }
+    div_n = n;
+    document.onmousemove = fncMove;
+}
+
+
+function setcookie( name, value, expirehours )
+{
+    var todayDate = new Date();
+    todayDate.setHours( todayDate.getHours() + expirehours );
+    document.cookie = name + '=' + escape( value ) + '; path=/; expires=' + todayDate.toGMTString() + ';'
+}
+
+
+function closeWin(n, x)
+{
+    if ( document.getElementsByName('chkbox')[x].checked )
+    {
+        setcookie(n, 'done', 24 );
+    }
+    document.getElementById(n).style.visibility = 'hidden';
+}
+
+
+function fncMVSet(n, bool )
+{
+    div_n = n;
+    ofx = event.offsetX;
+    ofy = event.offsetY;
+    mvf = bool;
+    var obj = document.getElementById(n);
+    if( mvf )
+        obj.style.filter = 'Alpha(Opacity=50)';
+    else
+        obj.style.filter = 'Alpha(Opacity=100)';
+}
+
+
+function fncMove(n)
+{
+    //alert(n);
+    if( mvf )
+    {
+        var obj = document.getElementById(div_n);
+        obj.style.top = event.clientY-ofy;
+        ;
+        obj.style.left= event.clientX-ofx;
+    }
+}
+//-->
+</script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script type="text/javascript">
+    $(document).ready(function() {
+      $('.close').click(function() {
+        $('#divpop').hide();
+      });
+    });
+ </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.close2').click(function() {
+        $('#divpop2').hide();
+      });
+    });
+ </script>
+<!--팝업창 스크립트 끝-->
+
+ </HEAD>
+
+<body onload='fncInit("divpop");fncInit("divpop2");' onmouseup='fncMVSet("divpop", false);fncMVSet("divpop2", false);'>
+
+
+
+<form name='notice_form'>
+
+    <div id='divpop' style='width:500px; height:600px; position:absolute; left:0px; top:0px; z-index:1000; visibility:hidden;'>
+
+        <table width='500' height='500' cellpadding='0' cellspacing='0'>
+            <tr>
+                <td align='center' bgcolor='white'><img src="pop.jpg" width="400" height="300" border="0"></td>
+            </tr>
+            <tr>
+                <td align='right' bgcolor='#000000'>
+                    <input type='checkbox' name='chkbox' onclick='closeWin("divpop", 0);'><font color='#FFFFFF'>오늘 하루 이 창을 열지 않음
+                    </font><a href="javascript:;" onclick="close_divpop('divpop_frm', 'divpop')"><b><span class="close"><B><span class="close"><font color='#FFFFFF'>[닫기]</font></span></B></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</form>
+
+
+</HTML>

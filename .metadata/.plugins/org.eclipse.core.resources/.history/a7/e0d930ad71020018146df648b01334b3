@@ -1,0 +1,54 @@
+package com.lkoproject.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import java.util.Enumeration;
+
+import com.lkoproject.memberdao.ProductDAO;
+
+public class UploadCommand implements MCommand{
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		String mainImage = request.getParameter("main_image");
+		String image1 = request.getParameter("image1");
+		String image2 = request.getParameter("image2");
+		String image3 = request.getParameter("image3");
+		String itemTitle = request.getParameter("item_title");
+		String mainCate = request.getParameter("main_cate");
+		String subCate = request.getParameter("sub_cate");
+		String itemCode = request.getParameter("item_code");
+		String s = request.getParameter("s_size");
+		String m = request.getParameter("m_size");
+		String l = request.getParameter("l_size");
+		String xl = request.getParameter("xl_size");
+		String price = request.getParameter("price");
+		String contentImage = request.getParameter("content_image");
+		String content = request.getParameter("content");
+		
+		ProductDAO dao = new ProductDAO();
+		
+		System.out.println(mainImage);
+		System.out.println(image1);
+		System.out.println(image2);
+		System.out.println(image3);
+		System.out.println(itemTitle);
+		System.out.println(mainCate);
+		System.out.println(subCate);
+		System.out.println(itemCode);
+		System.out.println(s);
+		System.out.println(m);
+		System.out.println(l);
+		System.out.println(xl);
+		System.out.println(price);
+		System.out.println(contentImage);
+		System.out.println(content);
+		
+		/*dao.upload(mainImage,image1,image2,image3,itemTitle,mainCate,subCate,itemCode,s,m,l,xl,price,contentImage,content);*/
+		
+		return null;
+	}
+
+}
