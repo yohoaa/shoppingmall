@@ -352,7 +352,7 @@ $('#defaddress').click(function(){
 			    }
 			    alert(msg);
 			});	
-			//asas
+			//COMMIT TEST
 		}) 
 		});
 		
